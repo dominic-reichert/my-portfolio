@@ -20,7 +20,7 @@
   align-items: center;
   justify-content: center;
 
-  margin-top: 3rem;
+  margin-top: 5rem;
 
   height: calc(100vh - 100px);
 

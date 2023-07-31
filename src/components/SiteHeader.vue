@@ -83,7 +83,9 @@ export default {
 
 <style scoped>
 .main-header {
-  position: sticky;
+  position: fixed;
+  width: 100%;
+
   top: 0;
 
   margin-left: auto;

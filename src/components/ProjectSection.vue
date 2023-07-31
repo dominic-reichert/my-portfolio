@@ -31,13 +31,13 @@ export default {
       projects: [
         {
           title: "Grab a Beer Game",
-          image: "/GrabABeerPreview.png",
+          image: "./assets/GrabABeerPreview.png",
           link: "https://dominic-reichert.github.io/grab-a-beer-game/",
           github: "https://github.com/dominic-reichert/grab-a-beer-game",
         },
         {
           title: "Classical Music Library",
-          image: "/MusicLibraryPreview.png",
+          image: "./assets/MusicLibraryPreview.png",
           link: "https://dominic-reichert.github.io/music-library/",
           github: "https://github.com/dominic-reichert/music-library",
         },
