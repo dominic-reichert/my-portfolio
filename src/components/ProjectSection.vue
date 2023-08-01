@@ -41,6 +41,12 @@ export default {
           link: "https://dominic-reichert.github.io/music-library/",
           github: "https://github.com/dominic-reichert/music-library",
         },
+        {
+          title: "Hangman",
+          image: "./assets/HangmanPreview.png",
+          link: "https://dominic-reichert.github.io/hangman/",
+          github: "https://github.com/dominic-reichert/hangman",
+        },
       ],
     };
   },
