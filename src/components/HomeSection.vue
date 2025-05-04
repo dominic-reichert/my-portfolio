@@ -2,14 +2,9 @@
   <section class="home" id="home">
     <p class="home-text">
       Hello there, I am Dominic and
-      <span class="welcome gradient-text">welcome to my</span
-      ><span class="outlined">website</span>
+      <span class="welcome gradient-text">welcome to my</span><span class="outlined">website</span>
     </p>
-    <img
-      src="../assets/images/developer.png"
-      alt="developer"
-      class="home-img"
-    />
+    <img src="../assets/images/developer.png" alt="developer" class="home-img" />
   </section>
 </template>
 
@@ -33,11 +28,9 @@
 }
 
 .gradient-text {
-  background-image: linear-gradient(
-    var(--main-color1),
-    var(--main-color2),
-    var(--main-color3)
-  );
+  background-image: linear-gradient(var(--main-color1),
+      var(--main-color2),
+      var(--main-color3));
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -66,12 +59,16 @@
 }
 
 @media screen and (max-width: 650px) {
+  .home-text {
+    font-size: calc(var(--fs-500) * 1.5);
+  }
+
   .gradient-text {
-    font-size: calc(var(--fs-400) * 1.5);
+    font-size: calc(var(--fs-400) * 1.8);
   }
 
   .outlined {
-    font-size: calc(var(--fs-700) * 2);
+    font-size: calc(var(--fs-700) * 2.3);
     -webkit-text-stroke-width: 2px;
   }
 

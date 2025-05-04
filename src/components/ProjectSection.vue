@@ -2,21 +2,13 @@
   <section class="projects" id="projects">
     <h2><span>My</span><span class="gradient-text">Projects</span></h2>
     <div class="grid-container">
-      <div
-        v-for="{ title, image, link, github } in projects"
-        :key="title"
-        class="project-card"
-      >
+      <div v-for="{ title, image, link, github } in projects" :key="title" class="project-card">
         <img :src="image" :alt="title" />
         <div class="project-card-body">
           <h2>{{ title }}</h2>
           <div class="btn-container">
-            <button class="project-btn" @click="goToSite(link)">
-              Visit Page
-            </button>
-            <button class="project-btn" @click="goToSite(github)">
-              See on GitHub
-            </button>
+            <DynamicButton class="project-btn" as="a" label="Visit Page" :href="link" target="_blank" />
+            <DynamicButton class="project-btn" as="a" label="See on GitHub" :href="github" target="_blank" />
           </div>
         </div>
       </div>
@@ -24,38 +16,29 @@
   </section>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      projects: [
-        {
-          title: "Grab a Beer Game",
-          image: "./assets/GrabABeerPreview.png",
-          link: "https://dominic-reichert.github.io/grab-a-beer-game/",
-          github: "https://github.com/dominic-reichert/grab-a-beer-game",
-        },
-        {
-          title: "Classical Music Library",
-          image: "./assets/MusicLibraryPreview.png",
-          link: "https://dominic-reichert.github.io/music-library/",
-          github: "https://github.com/dominic-reichert/music-library",
-        },
-        {
-          title: "Hangman",
-          image: "./assets/HangmanPreview.png",
-          link: "https://dominic-reichert.github.io/hangman/",
-          github: "https://github.com/dominic-reichert/hangman",
-        },
-      ],
-    };
+<script setup lang="ts">
+import DynamicButton from './button/dynamic-button.vue';
+
+const projects = [
+  {
+    title: "Grab a Beer Game",
+    image: "./assets/GrabABeerPreview.png",
+    link: "https://dominic-reichert.github.io/grab-a-beer-game/",
+    github: "https://github.com/dominic-reichert/grab-a-beer-game",
   },
-  methods: {
-    goToSite(url) {
-      window.open(url, "_blank").focus();
-    },
+  {
+    title: "Classical Music Library",
+    image: "./assets/MusicLibraryPreview.png",
+    link: "https://dominic-reichert.github.io/music-library/",
+    github: "https://github.com/dominic-reichert/music-library",
   },
-};
+  {
+    title: "Hangman",
+    image: "./assets/HangmanPreview.png",
+    link: "https://dominic-reichert.github.io/hangman/",
+    github: "https://github.com/dominic-reichert/hangman",
+  },
+]
 </script>
 
 <style scoped>
@@ -101,7 +84,7 @@ export default {
   -webkit-text-stroke-color: var(--text-color);
 }
 
-.project-card > img {
+.project-card>img {
   width: 100%;
   object-fit: contain;
 
@@ -131,6 +114,9 @@ export default {
 }
 
 .project-btn {
+  text-decoration: none;
+  text-align: center;
+
   width: 50%;
 
   margin-top: 0.5rem;
@@ -152,8 +138,7 @@ export default {
   transition: box-shadow 0.05s ease-in-out;
 }
 
-@media screen and (max-width: 950px) {
-}
+@media screen and (max-width: 950px) {}
 
 @media screen and (max-width: 650px) {
   .project-btn {

@@ -5,9 +5,8 @@
         <h2 class="gradient-text">Dominic Reichert</h2>
         <h3>Frontend Developer</h3>
         <p>
-          I'm Dominic and have just started my journey as a frontend developer.
-          I aim to create exceptional user experiences and strive to bring ideas
-          to life through clean and efficient code.
+          I'm Dominic, a frontend developer with end-to-end experience in building modern web applications.
+          I focus on delivering reliable, user-focused solutions with clean, maintainable code.
         </p>
       </div>
     </div>
@@ -15,29 +14,49 @@
       <article class="about-content">
         <h2>About Me</h2>
         <p>
-          I am currently building on a strong foundation in HTML, CSS,
-          JavaScript and Vue.js. I'm always eager to expand my knowledge and
-          explore the latest technologies and frameworks.
+          I’m a frontend developer with a strong foundation in HTML, CSS, and TypeScript, and hands-on experience
+          delivering robust applications in real-world, agile environments. I've worked extensively with modern frontend
+          frameworks, built and tested applications using tools like Vitest, Cypress, and Playwright, and deployed
+          scalable solutions via Docker, Azure DevOps, and Terraform. My experience also includes developing RESTful
+          backends with ASP.NET, allowing me to contribute effectively across the full stack.
         </p>
         <p>
-          Continuously striving for growth, I believe in the power of teamwork
-          and effective communication, as I find that collaboration fuels
-          innovation and leads to remarkable results.
+          I thrive in Scrum-based teams where collaboration and clear communication drive innovation. I’m always eager
+          to learn, explore new technologies, and improve both technically and creatively.
         </p>
         <p>
-          When I'm not coding, you can find me playing classical music in an
-          orchestra, caring for my several plants, gaming or experimenting in
-          the kitchen. I believe that a well-rounded life inspires creativity
-          and keeps the mind fresh for solving complex problems.
+          Outside of tech, I play classical music in an orchestra, care for a growing collection of plants, enjoy
+          gaming, and experiment in the kitchen. I believe that a well-balanced life fosters fresh perspectives and
+          creative problem-solving.
         </p>
         <p>
-          If you're looking for a frontend developer who is passionate,
-          detail-oriented, and dedicated, I'd love to connect and collaborate
-          with you. Feel free to explore my projects on GitHub and reach out for
-          any exciting opportunities or collaborations!
+          If you're looking for a dedicated developer who brings both technical skill and a collaborative mindset, feel
+          free to explore my work on GitHub or get in touch for exciting opportunities.
         </p>
       </article>
       <article class="experience">
+        <div class="experience-flex-container">
+          <h3 class="date">Oct 2023 - now</h3>
+          <div class="description">
+            <h2 class="title">Frontend Developer</h2>
+            <h3 class="company">Explicatis GmbH</h3>
+            <p>
+              Development of modern web applications in agile teams using Vue 3. Contribution to
+              diverse projects across frontend and backend, including automated testing.
+            </p>
+            <ul class="work-skills">
+              <li>Vue3</li>
+              <li>Flutter</li>
+              <li>ASP.NET</li>
+              <li>Docker</li>
+              <li>Automated Testing</li>
+              <li>DevOps</li>
+              <li>Terraform</li>
+              <li>Agile</li>
+              <li>Scrum</li>
+            </ul>
+          </div>
+        </div>
         <div class="experience-flex-container">
           <h3 class="date">Jan 2023 - May 2023</h3>
           <div class="description">
@@ -110,7 +129,7 @@
   position: relative;
 }
 
-.about-content p + p {
+.about-content p+p {
   margin-top: 1rem;
 }
 
@@ -133,11 +152,9 @@
 }
 
 .gradient-text {
-  background-image: linear-gradient(
-    var(--main-color1),
-    var(--main-color2),
-    var(--main-color3)
-  );
+  background-image: linear-gradient(var(--main-color1),
+      var(--main-color2),
+      var(--main-color3));
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -153,7 +170,7 @@
   gap: 2rem;
 }
 
-.experience-flex-container + .experience-flex-container {
+.experience-flex-container+.experience-flex-container {
   margin-top: 3rem;
 }
 

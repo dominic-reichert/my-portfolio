@@ -1,32 +1,20 @@
 <template>
-  <siteHeader />
+  <SiteHeader />
   <main>
-    <homeSection />
-    <aboutSection />
-    <projectSection />
-    <skillsSection />
+    <HomeSection />
+    <AboutSection />
+    <SkillsSection />
+    <ProjectSection />
   </main>
-  <siteFooter />
+  <SiteFooter />
 </template>
 
-<script>
-// @ is an alias to /src
-import siteHeader from "@/components/SiteHeader.vue";
-import siteFooter from "@/components/SiteFooter.vue";
-import homeSection from "@/components/HomeSection.vue";
-import aboutSection from "@/components/AboutSection.vue";
-import skillsSection from "@/components/SkillsSection.vue";
-import projectSection from "@/components/ProjectSection.vue";
+<script setup lang="ts">
+import AboutSection from '../components/AboutSection.vue'
+import HomeSection from '../components/HomeSection.vue'
+import ProjectSection from '../components/ProjectSection.vue'
+import SiteFooter from '../components/SiteFooter.vue'
+import SiteHeader from '../components/SiteHeader.vue'
+import SkillsSection from '../components/SkillsSection.vue'
 
-export default {
-  name: "HomeView",
-  components: {
-    siteHeader,
-    siteFooter,
-    homeSection,
-    aboutSection,
-    skillsSection,
-    projectSection,
-  },
-};
 </script>
