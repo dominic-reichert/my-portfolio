@@ -10,31 +10,17 @@
           <li><a href="#skills" @click="navBarToggle">Skills</a></li>
         </ul>
       </nav>
-      <button
-        id="light-mode-toggle"
-        class="light-mode-toggle"
-        @click="lightModeToggle"
-      >
-        <svg
-          width="100%"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 496 496"
-        >
-          <path
-            fill="currentColor"
+      <button id="light-mode-toggle" class="light-mode-toggle" @click="lightModeToggle">
+        <svg width="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 496">
+          <path fill="currentColor"
             d="M8,256C8,393,119,504,256,504S504,393,504,256,393,8,256,8,8,119,8,256ZM256,440V72a184,184,0,0,1,0,368Z"
-            transform="translate(-8 -8)"
-          />
+            transform="translate(-8 -8)" />
         </svg>
       </button>
-      <div
-        class="mobile-nav-toggle"
-        @click="
-          openMenu = !openMenu;
-          navBarToggle();
-        "
-        :class="{ active: openMenu }"
-      >
+      <div class="mobile-nav-toggle" @click="
+        openMenu = !openMenu;
+      navBarToggle();
+      " :class="{ active: openMenu }">
         <div class="menu-bar one"></div>
         <div class="menu-bar two"></div>
         <div class="menu-bar three"></div>
@@ -43,42 +29,45 @@
   </header>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      lightmode: localStorage.getItem("lightMode"),
-      openMenu: false,
-    };
-  },
-  methods: {
-    enableLightMode() {
-      document.body.classList.add("lightmode");
-      localStorage.setItem("lightMode", "enabled");
-      this.lightmode = "enabled";
-    },
-    disableLightMode() {
-      document.body.classList.remove("lightmode");
-      localStorage.setItem("lightMode", null);
-      this.lightmode = null;
-    },
-    lightModeToggle() {
-      if (this.lightmode !== "enabled") {
-        this.enableLightMode();
-      } else {
-        this.disableLightMode();
-      }
-    },
-    navBarToggle() {
-      document.querySelector(".navigation-list").classList.toggle("active");
-    },
-  },
-  mounted() {
-    if (this.lightmode === "enabled") {
-      this.enableLightMode();
-    }
-  },
-};
+<script setup lang="ts">
+import { ref, onMounted } from 'vue'
+
+const lightmode = ref(localStorage.getItem("lightMode"))
+const openMenu = ref(false)
+
+
+function enableLightMode() {
+  document.body.classList.add("lightmode");
+  localStorage.setItem("lightMode", "enabled");
+  lightmode.value = "enabled";
+}
+
+
+function disableLightMode() {
+  document.body.classList.remove("lightmode")
+  localStorage.setItem("lightMode", 'disabled')
+  lightmode.value = "disabled"
+}
+
+function lightModeToggle() {
+  if (lightmode.value !== "enabled") {
+    enableLightMode();
+  } else {
+    disableLightMode();
+  }
+}
+
+function navBarToggle() {
+  document.querySelector(".navigation-list")?.classList.toggle("active");
+}
+
+onMounted(() => {
+  if (lightmode.value === "enabled") {
+    enableLightMode();
+  }
+}
+)
+
 </script>
 
 <style scoped>
@@ -198,6 +187,7 @@ export default {
     left: 0%;
     right: auto;
   }
+
   51% {
     width: 0%;
     right: 0%;
@@ -214,11 +204,13 @@ export default {
 .menu-wrapper:hover .menu-bar.active {
   animation: none;
 }
+
 .active .one {
   top: 50%;
   left: 0%;
   transform: rotate(45deg);
 }
+
 .active .two {
   top: 50%;
   left: 0%;

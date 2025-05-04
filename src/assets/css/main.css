@@ -126,12 +126,10 @@ h3 + p {
 }
 
 main {
-  margin-left: auto;
-  margin-right: auto;
-
+  margin-inline: auto;
   max-width: 60rem;
   width: 70%;
-}
+} 
 
 section + section {
   margin-top: 5rem;
